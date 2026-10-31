@@ -1,0 +1,334 @@
+"msacmsa","pmsa","msaname","pmsaname","LandSQMI","afact"
+"msacmsa","pmsa","MSA/CMSA Name","PMSA Name","Land Area Sq Mls","pmsa to pmsa allocation factor"
+"0040"," ","Abilene, TX"," ",915.6259,1 
+"0120"," ","Albany, GA"," ",685.369,1 
+"0160"," ","Albany-Schenectady-Troy, NY"," ",3222.194,1 
+"0200"," ","Albuquerque, NM"," ",5942.9998,1 
+"0220"," ","Alexandria, LA"," ",1322.5412,1 
+"0240"," ","Allentown-Bethlehem-Easton, PA"," ",1101.4963,1 
+"0280"," ","Altoona, PA"," ",525.8023,1 
+"0320"," ","Amarillo, TX"," ",1823.6752,1 
+"0380"," ","Anchorage, AK"," ",1697.2149,1 
+"0450"," ","Anniston, AL"," ",608.4613,1 
+"0460"," ","Appleton-Oshkosh-Neenah, WI"," ",1398.7639,1 
+"0480"," ","Asheville, NC"," ",1105.4096,1 
+"0500"," ","Athens, GA"," ",590.3757,1 
+"0520"," ","Atlanta, GA"," ",6123.799,1 
+"0580"," ","Auburn-Opelika, AL"," ",608.7103,1 
+"0600"," ","Augusta-Aiken, GA-SC"," ",2448.3808,1 
+"0640"," ","Austin-San Marcos, TX"," ",4224.0199,1 
+"0680"," ","Bakersfield, CA"," ",8140.9645,1 
+"0730"," ","Bangor, ME"," ",397.3285,1 
+"0740"," ","Barnstable-Yarmouth, MA"," ",259.8127,1 
+"0760"," ","Baton Rouge, LA"," ",1586.1821,1 
+"0840"," ","Beaumont-Port Arthur, TX"," ",2154.282,1 
+"0860"," ","Bellingham, WA"," ",2119.5335,1 
+"0870"," ","Benton Harbor, MI"," ",570.9998,1 
+"0880"," ","Billings, MT"," ",2635.1543,1 
+"0920"," ","Biloxi-Gulfport-Pascagoula, MS"," ",1784.7591,1 
+"0960"," ","Binghamton, NY"," ",1225.5149,1 
+"1000"," ","Birmingham, AL"," ",3186.6389,1 
+"1010"," ","Bismarck, ND"," ",3559.3564,1 
+"1020"," ","Bloomington, IN"," ",394.3461,1 
+"1040"," ","Bloomington-Normal, IL"," ",1183.5274,1 
+"1080"," ","Boise City, ID"," ",1644.7092,1 
+"1122","1120","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Boston, MA-NH (P)",2021.7858,1 
+"1122","1200","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Brockton, MA (P)",297.5526,1 
+"1122","2600","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Fitchburg-Leominster, MA (P)",278.5381,1 
+"1122","4160","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Lawrence, MA-NH (P)",437.5994,1 
+"1122","4560","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Lowell, MA-NH (P)",249.7065,1 
+"1122","4760","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Manchester, NH (P)",315.6752,1 
+"1122","5350","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Nashua, NH (P)",323.7752,1 
+"1122","5400","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","New Bedford, MA (P)",214.1929,1 
+"1122","6450","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Portsmouth-Rochester, NH-ME (P)",627.6905,1 
+"1122","9240","Boston-Worcester-Lawrence, MA-NH-ME-CT (C)","Worcester, MA-CT (P)",860.6031,1 
+"1240"," ","Brownsville-Harlingen-San Benito, TX"," ",905.7567,1 
+"1260"," ","Bryan-College Station, TX"," ",585.7799,1 
+"1280"," ","Buffalo-Niagara Falls, NY"," ",1567.1579,1 
+"1305"," ","Burlington, VT"," ",562.0494,1 
+"1320"," ","Canton-Massillon, OH"," ",970.8093,1 
+"1350"," ","Casper, WY"," ",5339.882,1 
+"1360"," ","Cedar Rapids, IA"," ",717.4424,1 
+"1400"," ","Champaign-Urbana, IL"," ",996.8059,1 
+"1440"," ","Charleston-North Charleston, SC"," ",2590.9539,1 
+"1480"," ","Charleston, WV"," ",1249.3306,1 
+"1520"," ","Charlotte-Gastonia-Rock Hill, NC-SC"," ",3376.805,1 
+"1540"," ","Charlottesville, VA"," ",1176.8188,1 
+"1560"," ","Chattanooga, TN-GA"," ",1823.5816,1 
+"1580"," ","Cheyenne, WY"," ",2686.0515,1 
+"1602","1600","Chicago-Gary-Kenosha, IL-IN-WI (C)","Chicago, IL (P)",5062.3719,1 
+"1602","2960","Chicago-Gary-Kenosha, IL-IN-WI (C)","Gary, IN (P)",915.095,1 
+"1602","3740","Chicago-Gary-Kenosha, IL-IN-WI (C)","Kankakee, IL (P)",676.7491,1 
+"1602","3800","Chicago-Gary-Kenosha, IL-IN-WI (C)","Kenosha, WI (P)",272.8265,1 
+"1620"," ","Chico-Paradise, CA"," ",1639.4884,1 
+"1642","1640","Cincinnati-Hamilton, OH-KY-IN (C)","Cincinnati, OH-KY-IN (P)",3341.729,1 
+"1642","3200","Cincinnati-Hamilton, OH-KY-IN (C)","Hamilton-Middletown, OH (P)",467.2697,1 
+"1660"," ","Clarksville-Hopkinsville, TN-KY"," ",1260.5923,1 
+"1692","0080","Cleveland-Akron, OH (C)","Akron, OH (P)",905.113,1 
+"1692","1680","Cleveland-Akron, OH (C)","Cleveland-Lorain-Elyria, OH (P)",2706.8444,1 
+"1720"," ","Colorado Springs, CO"," ",2126.4489,1 
+"1740"," ","Columbia, MO"," ",685.4301,1 
+"1760"," ","Columbia, SC"," ",1455.6669,1 
+"1800"," ","Columbus, GA-AL"," ",1570.0372,1 
+"1840"," ","Columbus, OH"," ",3141.2429,1 
+"1880"," ","Corpus Christi, TX"," ",1527.468,1 
+"1890"," ","Corvallis, OR"," ",676.4613,1 
+"1900"," ","Cumberland, MD-WV"," ",753.1525,1 
+"1922","1920","Dallas-Fort Worth, TX (C)","Dallas, TX (P)",6185.8263,1 
+"1922","2800","Dallas-Fort Worth, TX (C)","Fort Worth-Arlington, TX (P)",2917.9587,1 
+"1950"," ","Danville, VA"," ",1013.8209,1 
+"1960"," ","Davenport-Moline-Rock Island, IA-IL"," ",1707.8978,1 
+"2000"," ","Dayton-Springfield, OH"," ",1683.4538,1 
+"2020"," ","Daytona Beach, FL"," ",1588.2457,1 
+"2030"," ","Decatur, AL"," ",1275.5959,1 
+"2040"," ","Decatur, IL"," ",580.5227,1 
+"2082","1125","Denver-Boulder-Greeley, CO (C)","Boulder-Longmont, CO (P)",742.4601,1 
+"2082","2080","Denver-Boulder-Greeley, CO (C)","Denver, CO (P)",3760.6309,1 
+"2082","3060","Denver-Boulder-Greeley, CO (C)","Greeley, CO (P)",3992.4469,1 
+"2120"," ","Des Moines, IA"," ",1727.4555,1 
+"2162","0440","Detroit-Ann Arbor-Flint, MI (C)","Ann Arbor, MI (P)",2028.8384,1 
+"2162","2160","Detroit-Ann Arbor-Flint, MI (C)","Detroit, MI (P)",3896.7775,1 
+"2162","2640","Detroit-Ann Arbor-Flint, MI (C)","Flint, MI (P)",639.6402,1 
+"2180"," ","Dothan, AL"," ",1141.4335,1 
+"2190"," ","Dover, DE"," ",589.7213,1 
+"2200"," ","Dubuque, IA"," ",608.1564,1 
+"2240"," ","Duluth-Superior, MN-WI"," ",7534.298,1 
+"2290"," ","Eau Claire, WI"," ",1648.0698,1 
+"2320"," ","El Paso, TX"," ",1013.1061,1 
+"2330"," ","Elkhart-Goshen, IN"," ",463.8136,1 
+"2335"," ","Elmira, NY"," ",408.1699,1 
+"2340"," ","Enid, OK"," ",1058.3913,1 
+"2360"," ","Erie, PA"," ",801.9478,1 
+"2400"," ","Eugene-Springfield, OR"," ",4554.0042,1 
+"2440"," ","Evansville-Henderson, IN-KY"," ",1467.2715,1 
+"2520"," ","Fargo-Moorhead, ND-MN"," ",2810.4724,1 
+"2560"," ","Fayetteville, NC"," ",652.7165,1 
+"2580"," ","Fayetteville-Springdale-Rogers, AR"," ",1795.7112,1 
+"2620"," ","Flagstaff, AZ-UT"," ",22609.3838,1 
+"2650"," ","Florence, AL"," ",1263.9932,1 
+"2655"," ","Florence, SC"," ",799.8419,1 
+"2670"," ","Fort Collins-Loveland, CO"," ",2601.3006,1 
+"2700"," ","Fort Myers-Cape Coral, FL"," ",803.6304,1 
+"2710"," ","Fort Pierce-Port St. Lucie, FL"," ",1128.0607,1 
+"2720"," ","Fort Smith, AR-OK"," ",1805.4518,1 
+"2750"," ","Fort Walton Beach, FL"," ",935.6262,1 
+"2760"," ","Fort Wayne, IN"," ",2447.5592,1 
+"2840"," ","Fresno, CA"," ",8098.5869,1 
+"2880"," ","Gadsden, AL"," ",534.8224,1 
+"2900"," ","Gainesville, FL"," ",874.2452,1 
+"2975"," ","Glens Falls, NY"," ",1704.7295,1 
+"2980"," ","Goldsboro, NC"," ",552.5692,1 
+"2985"," ","Grand Forks, ND-MN"," ",3408.1776,1 
+"2995"," ","Grand Junction, CO"," ",3327.7459,1 
+"3000"," ","Grand Rapids-Muskegon-Holland, MI"," ",2758.4101,1 
+"3040"," ","Great Falls, MT"," ",2697.9036,1 
+"3080"," ","Green Bay, WI"," ",528.6754,1 
+"3120"," ","Greensboro--Winston Salem--High Point, NC"," ",3881.0941,1 
+"3150"," ","Greenville, NC"," ",651.5767,1 
+"3160"," ","Greenville-Spartanburg-Anderson, SC"," ",3208.6077,1 
+"3240"," ","Harrisburg-Lebanon-Carlisle, PA"," ",1990.8295,1 
+"3280"," ","Hartford, CT"," ",1677.1915,1 
+"3285"," ","Hattiesburg, MS"," ",963.6439,1 
+"3290"," ","Hickory-Morganton-Lenoir, NC"," ",1638.4758,1 
+"3320"," ","Honolulu, HI"," ",599.7663,1 
+"3350"," ","Houma, LA"," ",2339.6098,1 
+"3362","1145","Houston-Galveston-Brazoria, TX (C)","Brazoria, TX (P)",1386.4017,1 
+"3362","2920","Houston-Galveston-Brazoria, TX (C)","Galveston-Texas City, TX (P)",398.4705,1 
+"3362","3360","Houston-Galveston-Brazoria, TX (C)","Houston, TX (P)",5920.1139,1 
+"3400"," ","Huntington-Ashland, WV-KY-OH"," ",2159.2169,1 
+"3440"," ","Huntsville, AL"," ",1372.9719,1 
+"3480"," ","Indianapolis, IN"," ",3522.9927,1 
+"3500"," ","Iowa City, IA"," ",614.4792,1 
+"3520"," ","Jackson, MI"," ",706.5975,1 
+"3560"," ","Jackson, MS"," ",2360.8115,1 
+"3580"," ","Jackson, TN"," ",845.5183,1 
+"3600"," ","Jacksonville, FL"," ",2635.3363,1 
+"3605"," ","Jacksonville, NC"," ",766.818,1 
+"3610"," ","Jamestown, NY"," ",1062.0476,1 
+"3620"," ","Janesville-Beloit, WI"," ",720.4685,1 
+"3660"," ","Johnson City-Kingsport-Bristol, TN-VA"," ",2865.5088,1 
+"3680"," ","Johnstown, PA"," ",1762.6816,1 
+"3700"," ","Jonesboro, AR"," ",710.8396,1 
+"3710"," ","Joplin, MO"," ",1266.1496,1 
+"3720"," ","Kalamazoo-Battle Creek, MI"," ",1881.4406,1 
+"3760"," ","Kansas City, MO-KS"," ",5406.2119,1 
+"3810"," ","Killeen-Temple, TX"," ",2111.4835,1 
+"3840"," ","Knoxville, TN"," ",2449.2648,1 
+"3850"," ","Kokomo, IN"," ",553.452,1 
+"3870"," ","La Crosse, WI-MN"," ",1011.1465,1 
+"3880"," ","Lafayette, LA"," ",2593.6205,1 
+"3920"," ","Lafayette, IN"," ",904.8874,1 
+"3960"," ","Lake Charles, LA"," ",1071.117,1 
+"3980"," ","Lakeland-Winter Haven, FL"," ",1874.3815,1 
+"4000"," ","Lancaster, PA"," ",949.0608,1 
+"4040"," ","Lansing-East Lansing, MI"," ",1707.0561,1 
+"4080"," ","Laredo, TX"," ",3356.8334,1 
+"4100"," ","Las Cruces, NM"," ",3807.1836,1 
+"4120"," ","Las Vegas, NV-AZ"," ",39368.6386,1 
+"4150"," ","Lawrence, KS"," ",456.8704,1 
+"4200"," ","Lawton, OK"," ",1069.3452,1 
+"4240"," ","Lewiston-Auburn, ME"," ",304.6352,1 
+"4280"," ","Lexington, KY"," ",1919.4709,1 
+"4320"," ","Lima, OH"," ",805.6789,1 
+"4360"," ","Lincoln, NE"," ",838.8808,1 
+"4400"," ","Little Rock-North Little Rock, AR"," ",2907.6214,1 
+"4420"," ","Longview-Marshall, TX"," ",1760.3794,1 
+"4472","4480","Los Angeles-Riverside-Orange County, CA (C)","Los Angeles-Long Beach, CA (P)",4060.871,1 
+"4472","5945","Los Angeles-Riverside-Orange County, CA (C)","Orange County, CA (P)",789.4043,1 
+"4472","6780","Los Angeles-Riverside-Orange County, CA (C)","Riverside-San Bernardino, CA (P)",27259.8649,1 
+"4472","8735","Los Angeles-Riverside-Orange County, CA (C)","Ventura, CA (P)",1845.2991,1 
+"4520"," ","Louisville, KY-IN"," ",2071.9944,1 
+"4600"," ","Lubbock, TX"," ",899.4935,1 
+"4640"," ","Lynchburg, VA"," ",1790.4375,1 
+"4680"," ","Macon, GA"," ",1531.8065,1 
+"4720"," ","Madison, WI"," ",1201.8948,1 
+"4800"," ","Mansfield, OH"," ",898.9903,1 
+"4880"," ","McAllen-Edinburg-Mission, TX"," ",1569.7464,1 
+"4890"," ","Medford-Ashland, OR"," ",2785.1933,1 
+"4900"," ","Melbourne-Titusville-Palm Bay, FL"," ",1018.1892,1 
+"4920"," ","Memphis, TN-AR-MS"," ",3006.4281,1 
+"4940"," ","Merced, CA"," ",1928.6945,1 
+"4992","2680","Miami-Fort Lauderdale, FL (C)","Fort Lauderdale, FL (P)",1205.396,1 
+"4992","5000","Miami-Fort Lauderdale, FL (C)","Miami, FL (P)",1946.0638,1 
+"5082","5080","Milwaukee-Racine, WI (C)","Milwaukee-Waukesha, WI (P)",1459.8963,1 
+"5082","6600","Milwaukee-Racine, WI (C)","Racine, WI (P)",333.0971,1 
+"5120"," ","Minneapolis-St. Paul, MN-WI"," ",6063.0692,1 
+"5140"," ","Missoula, MT"," ",2597.9665,1 
+"5160"," ","Mobile, AL"," ",2829.4376,1 
+"5170"," ","Modesto, CA"," ",1493.7907,1 
+"5200"," ","Monroe, LA"," ",610.5285,1 
+"5240"," ","Montgomery, AL"," ",2006.9869,1 
+"5280"," ","Muncie, IN"," ",393.2918,1 
+"5330"," ","Myrtle Beach, SC"," ",1133.6819,1 
+"5345"," ","Naples, FL"," ",2025.3414,1 
+"5360"," ","Nashville, TN"," ",4072.7314,1 
+"5520"," ","New London-Norwich, CT-RI"," ",662.2414,1 
+"5560"," ","New Orleans, LA"," ",3399.4931,1 
+"5602","0875","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Bergen-Passaic, NJ (P)",419.4628,1 
+"5602","1160","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Bridgeport, CT (P)",261.8327,1 
+"5602","1930","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Danbury, CT (P)",386.8992,1 
+"5602","2281","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Dutchess County, NY (P)",801.5947,1 
+"5602","3640","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Jersey City, NJ (P)",46.6876,1 
+"5602","5015","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Middlesex-Somerset-Hunterdon, NJ (P)",1044.3486,1 
+"5602","5190","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Monmouth-Ocean, NJ (P)",1108.2139,1 
+"5602","5380","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Nassau-Suffolk, NY (P)",1198.8902,1 
+"5602","5480","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","New Haven-Meriden, CT (P)",429.9228,1 
+"5602","5600","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","New York, NY (P)",1141.6366,1 
+"5602","5640","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Newark, NJ (P)",1577.6705,1 
+"5602","5660","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Newburgh, NY-PA (P)",1363.1463,1 
+"5602","8040","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Stamford-Norwalk, CT (P)",210.1185,1 
+"5602","8480","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Trenton, NJ (P)",225.929,1 
+"5602","8880","New York, Northern New Jersey, Long Island, NY-NJ-CT-PA (C)","Waterbury, CT (P)",233.5071,1 
+"5720"," ","Norfolk-Virginia Beach-Newport News, VA-"," ",2348.4864,1 
+"5790"," ","Ocala, FL"," ",1578.8583,1 
+"5800"," ","Odessa-Midland, TX"," ",1801.3067,1 
+"5880"," ","Oklahoma City, OK"," ",4246.7384,1 
+"5920"," ","Omaha, NE-IA"," ",2475.4305,1 
+"5960"," ","Orlando, FL"," ",3490.7063,1 
+"5990"," ","Owensboro, KY"," ",462.3889,1 
+"6015"," ","Panama City, FL"," ",763.6781,1 
+"6020"," ","Parkersburg-Marietta, WV-OH"," ",1002.4383,1 
+"6080"," ","Pensacola, FL"," ",1679.2794,1 
+"6120"," ","Peoria-Pekin, IL"," ",1796.3329,1 
+"6162","0560","Philadelphia-Wilmington-Atlantic City, PA-NJ-DE-MD (C)","Atlantic-Cape May, NJ (P)",816.2599,1 
+"6162","6160","Philadelphia-Wilmington-Atlantic City, PA-NJ-DE-MD (C)","Philadelphia, PA-NJ (P)",3855.2338,1 
+"6162","8760","Philadelphia-Wilmington-Atlantic City, PA-NJ-DE-MD (C)","Vineland-Millville-Bridgeton, NJ (P)",489.297,1 
+"6162","9160","Philadelphia-Wilmington-Atlantic City, PA-NJ-DE-MD (C)","Wilmington-Newark, DE-MD (P)",774.4002,1 
+"6200"," ","Phoenix-Mesa, AZ"," ",14572.7323,1 
+"6240"," ","Pine Bluff, AR"," ",884.8153,1 
+"6280"," ","Pittsburgh, PA"," ",4625.6298,1 
+"6320"," ","Pittsfield, MA"," ",251.8063,1 
+"6340"," ","Pocatello, ID"," ",1113.2985,1 
+"6400"," ","Portland, ME"," ",626.2577,1 
+"6442","6440","Portland-Salem, OR-WA (C)","Portland-Vancouver, OR-WA (P)",5027.6602,1 
+"6442","7080","Portland-Salem, OR-WA (C)","Salem, OR (P)",1924.9797,1 
+"6480"," ","Providence-Fall River-Warwick, RI-MA"," ",1141.208,1 
+"6520"," ","Provo-Orem, UT"," ",1998.3324,1 
+"6560"," ","Pueblo, CO"," ",2388.6872,1 
+"6580"," ","Punta Gorda, FL"," ",693.6038,1 
+"6640"," ","Raleigh-Durham-Chapel Hill, NC"," ",3488.8094,1 
+"6660"," ","Rapid City, SD"," ",2776.1457,1 
+"6680"," ","Reading, PA"," ",858.8802,1 
+"6690"," ","Redding, CA"," ",3785.1947,1 
+"6720"," ","Reno, NV"," ",6342.2718,1 
+"6740"," ","Richland-Kennewick-Pasco, WA"," ",2945.4932,1 
+"6760"," ","Richmond-Petersburg, VA"," ",2944.4678,1 
+"6800"," ","Roanoke, VA"," ",850.9956,1 
+"6820"," ","Rochester, MN"," ",653.0104,1 
+"6840"," ","Rochester, NY"," ",3425.5222,1 
+"6880"," ","Rockford, IL"," ",1553.8352,1 
+"6895"," ","Rocky Mount, NC"," ",1045.2946,1 
+"6922","6920","Sacramento-Yolo, CA (C)","Sacramento, CA (P)",4080.8659,1 
+"6922","9270","Sacramento-Yolo, CA (C)","Yolo, CA (P)",1013.2675,1 
+"6960"," ","Saginaw-Bay City-Midland, MI"," ",1774.3713,1 
+"6980"," ","St. Cloud, MN"," ",1752.7933,1 
+"7000"," ","St. Joseph, MO"," ",844.9135,1 
+"7040"," ","St. Louis, MO-IL"," ",6392.0695,1 
+"7120"," ","Salinas, CA"," ",3321.9531,1 
+"7160"," ","Salt Lake City-Ogden, UT"," ",1617.3948,1 
+"7200"," ","San Angelo, TX"," ",1522.0973,1 
+"7240"," ","San Antonio, TX"," ",3326.397,1 
+"7320"," ","San Diego, CA"," ",4199.8909,1 
+"7362","5775","San Francisco-Oakland-San Jose, CA (C)","Oakland, CA (P)",1457.5182,1 
+"7362","7360","San Francisco-Oakland-San Jose, CA (C)","San Francisco, CA (P)",1015.5641,1 
+"7362","7400","San Francisco-Oakland-San Jose, CA (C)","San Jose, CA (P)",1290.6876,1 
+"7362","7485","San Francisco-Oakland-San Jose, CA (C)","Santa Cruz-Watsonville, CA (P)",445.2414,1 
+"7362","7500","San Francisco-Oakland-San Jose, CA (C)","Santa Rosa, CA (P)",1575.8783,1 
+"7362","8720","San Francisco-Oakland-San Jose, CA (C)","Vallejo-Fairfield-Napa, CA (P)",1582.9236,1 
+"7460"," ","San Luis Obispo-Atascadero-Paso Robles, CA"," ",3304.3214,1 
+"7480"," ","Santa Barbara-Santa Maria-Lompoc, CA"," ",2737.0114,1 
+"7490"," ","Santa Fe, NM"," ",2018.5353,1 
+"7510"," ","Sarasota-Bradenton, FL"," ",1312.5779,1 
+"7520"," ","Savannah, GA"," ",1359.239,1 
+"7560"," ","Scranton--Wilkes-Barre--Hazleton, PA"," ",2232.1874,1 
+"7602","1150","Seattle-Tacoma-Bremerton, WA (C)","Bremerton, WA (P)",395.9738,1 
+"7602","5910","Seattle-Tacoma-Bremerton, WA (C)","Olympia, WA (P)",727.0215,1 
+"7602","7600","Seattle-Tacoma-Bremerton, WA (C)","Seattle-Bellevue-Everett, WA (P)",4423.5398,1 
+"7602","8200","Seattle-Tacoma-Bremerton, WA (C)","Tacoma, WA (P)",1678.9136,1 
+"7610"," ","Sharon, PA"," ",671.816,1 
+"7620"," ","Sheboygan, WI"," ",513.6304,1 
+"7640"," ","Sherman-Denison, TX"," ",933.5124,1 
+"7680"," ","Shreveport-Bossier City, LA"," ",2316.4675,1 
+"7720"," ","Sioux City, IA-NE"," ",1136.391,1 
+"7760"," ","Sioux Falls, SD"," ",1387.7609,1 
+"7800"," ","South Bend, IN"," ",457.3406,1 
+"7840"," ","Spokane, WA"," ",1763.636,1 
+"7880"," ","Springfield, IL"," ",1182.4295,1 
+"7920"," ","Springfield, MO"," ",1831.4498,1 
+"8000"," ","Springfield, MA"," ",735.6297,1 
+"8050"," ","State College, PA"," ",1107.5331,1 
+"8080"," ","Steubenville-Weirton, OH-WV"," ",581.2773,1 
+"8120"," ","Stockton-Lodi, CA"," ",1399.2823,1 
+"8140"," ","Sumter, SC"," ",665.4079,1 
+"8160"," ","Syracuse, NY"," ",3082.6362,1 
+"8240"," ","Tallahassee, FL"," ",1182.8721,1 
+"8280"," ","Tampa-St. Petersburg-Clearwater, FL"," ",2553.9822,1 
+"8320"," ","Terre Haute, IN"," ",1017.8,1 
+"8360"," ","Texarkana, TX-Texarkana, AR"," ",1511.847,1 
+"8400"," ","Toledo, OH"," ",1364.5676,1 
+"8440"," ","Topeka, KS"," ",549.8153,1 
+"8520"," ","Tucson, AZ"," ",9186.2653,1 
+"8560"," ","Tulsa, OK"," ",5014.4956,1 
+"8600"," ","Tuscaloosa, AL"," ",1324.3708,1 
+"8640"," ","Tyler, TX"," ",928.3832,1 
+"8680"," ","Utica-Rome, NY"," ",2623.9527,1 
+"8750"," ","Victoria, TX"," ",882.5048,1 
+"8780"," ","Visalia-Tulare-Porterville, CA"," ",4823.9678,1 
+"8800"," ","Waco, TX"," ",1041.8828,1 
+"8872","0720","Washington-Baltimore, DC-MD-VA-WV (C)","Baltimore, MD (P)",2609.0481,1 
+"8872","3180","Washington-Baltimore, DC-MD-VA-WV (C)","Hagerstown, MD (P)",458.1363,1 
+"8872","8840","Washington-Baltimore, DC-MD-VA-WV (C)","Washington, DC-MD-VA-WV (P)",6509.2699,1 
+"8920"," ","Waterloo-Cedar Falls, IA"," ",567.1144,1 
+"8940"," ","Wausau, WI"," ",1544.9618,1 
+"8960"," ","West Palm Beach-Boca Raton, FL"," ",1974.1069,1 
+"9000"," ","Wheeling, WV-OH"," ",950.5209,1 
+"9040"," ","Wichita, KS"," ",2966.5591,1 
+"9080"," ","Wichita Falls, TX"," ",1537.3617,1 
+"9140"," ","Williamsport, PA"," ",1234.8534,1 
+"9200"," ","Wilmington, NC"," ",1053.7277,1 
+"9260"," ","Yakima, WA"," ",4296.2297,1 
+"9280"," ","York, PA"," ",904.4544,1 
+"9320"," ","Youngstown-Warren, OH"," ",1564.1813,1 
+"9340"," ","Yuba City, CA"," ",1233.237,1 
+"9360"," ","Yuma, AZ"," ",5514.089,1 
+"9999"," ","Non-metro"," ",2831648.8582,1 

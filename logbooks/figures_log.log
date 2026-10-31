@@ -1,0 +1,366 @@
+--------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\glhoward\Downloads\Replication\logbooks/figures_log.log
+  log type:  text
+ opened on:  21 May 2025, 11:04:51
+
+. 
+. gen inc_growth = log(medinc_2018 )-log(medinc_2000 )
+
+. gen loginc_2000 = log(medinc_2000 )
+
+. 
+. reg inc_growth loginc_2000 [w=pop_2000 ], r
+(analytic weights assumed)
+(sum of wgt is 274,212,690.86996)
+
+Linear regression                               Number of obs     =        911
+                                                F(1, 909)         =       4.65
+                                                Prob > F          =     0.0313
+                                                R-squared         =     0.0424
+                                                Root MSE          =     .07954
+
+------------------------------------------------------------------------------
+             |               Robust
+  inc_growth | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ loginc_2000 |    .087169   .0404239     2.16   0.031      .007834     .166504
+       _cons |  -.5035145   .4255869    -1.18   0.237    -1.338762    .3317326
+------------------------------------------------------------------------------
+
+. 
+. rename inc_growth medinc_growth
+
+. gen pop_growth = log(pop_2018)-log(pop_2000)
+
+. 
+. // growth statistics by deciles of income
+. xtile medinc_2000_pctile = medinc_2000 [w=pop_2000], n(100)
+(analytic weights assumed)
+
+. gen medinc_growth_pct = exp(medinc_growth)*100
+
+. sum medinc_growth_pct [w=pop_2000] if inrange(medinc_2000_pctile ,90,100)
+(analytic weights assumed)
+
+    Variable |     Obs      Weight        Mean   Std. dev.       Min        Max
+-------------+-----------------------------------------------------------------
+medinc_gro~t |      24  26361702.8    165.7451   11.73559   137.0188   184.0573
+
+. sum medinc_growth_pct [w=pop_2000] if inrange(medinc_2000_pctile ,0,50)
+(analytic weights assumed)
+
+    Variable |     Obs      Weight        Mean   Std. dev.       Min        Max
+-------------+-----------------------------------------------------------------
+medinc_gro~t |     794   138684735    150.9515   11.25199   110.0692   252.4814
+
+. 
+. // distribution of growth
+. gen pop_growth_pct = exp(pop_growth)
+
+. sum pop_growth_pct [w=pop_2000], det
+(analytic weights assumed)
+
+                       pop_growth_pct
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%     .9103757       .6535696
+ 5%     .9721485       .7292692
+10%     .9952959       .7417284       Obs                 911
+25%     1.059381       .7647913       Sum of wgt.   274212691
+
+50%     1.118091                      Mean           1.170591
+                        Largest       Std. dev.       .166647
+75%      1.26619       1.879419
+90%     1.417205       1.901668       Variance       .0277712
+95%     1.481883       2.128474       Skewness       1.011299
+99%     1.708876       2.300504       Kurtosis       4.081072
+
+. 
+. replace medinc_2000=medinc_2000/1000
+(911 real changes made)
+
+. 
+. 
+. local rhsvar medinc_2000
+
+. 
+. 
+. label var pop_growth "Population Growth, 2000-2018"
+
+. label var medinc_growth "Income Growth, 2000-2018"
+
+. label var rent_growth "Rent Growth, 2000-2018"
+
+. label var hpi_growth "House Price Growth, 2000-2018"
+
+. 
+. sort `rhsvar'
+
+. 
+. * Initialize the cbsaname variable as empty strings
+. gen cbsaname = ""
+(911 missing values generated)
+
+. 
+. * Assign city names based on the cbsa codes
+. destring cz, gen(cbsa) force
+cz: contains nonnumeric characters; cbsa generated as long
+(1 missing value generated)
+
+. replace cbsaname = "Houston" if cbsa == 26420
+variable cbsaname was str1 now str7
+(1 real change made)
+
+. replace cbsaname = "Dallas" if cbsa == 19100
+(1 real change made)
+
+. replace cbsaname = "Detroit" if cbsa == 19820
+(1 real change made)
+
+. replace cbsaname = "Washington DC" if cbsa == 47900
+variable cbsaname was str7 now str13
+(1 real change made)
+
+. replace cbsaname = "San Francisco" if cbsa == 41860
+(1 real change made)
+
+. replace cbsaname = "Las Vegas" if cbsa == 29820
+(1 real change made)
+
+. replace cbsaname = "Austin" if cbsa == 12420
+(1 real change made)
+
+. replace cbsaname = "Phoenix" if cbsa == 38060
+(1 real change made)
+
+. replace cbsaname = "San Jose" if cbsa == 41940
+(1 real change made)
+
+. replace cbsaname = "Los Angeles" if cbsa == 31080
+(1 real change made)
+
+. 
+. cap graph drop _all
+
+. foreach var of varlist pop_growth medinc_growth hpi_growth rent_growth  {
+  2.         reg `var' `rhsvar' [w=pop_2000], r
+  3. *       pause
+.         local variance = e(V)[1,1]
+  4.         local sd = sqrt(`variance')
+  5.         local beta = strofreal(`=_b[`rhsvar']',"%5.4f")
+  6.         local t = strofreal(`=`beta'/`sd'',"%5.4f")
+  7.         local sd = strofreal(`sd',"%5.4f")
+  8.         
+.         local varlab : var label `var'
+  9.         
+.         qui sum `var' [w=pop_2000], det
+ 10.         local bottom = r(p5)
+ 11.         local top = r(p95)
+ 12.         
+.         qui sum `rhsvar' [w=pop_2000], det
+ 13.         local rhstop = r(p5)
+ 14.         local rhsbottom = r(p95)
+ 15.         
+.         cap drop smooth
+ 16.         lpoly `var'  `rhsvar' [w=round(pop_2000)], degree(1) bwidth(10) gen(smooth) at(
+> `rhsvar') nograph
+ 17.         
+.         cap drop inrange
+ 18.         gen inrange = inrange(`var',`bottom',`top') & inrange(`rhsvar',`rhstop',`rhsbot
+> tom')
+ 19.         scatter `var'  `rhsvar' if inrange [aw=pop_2000], msize(tiny)  mlstyle(none)  m
+> color(blue%65) name(sc1_`var', replace) xlabel(, labsize(large)) ylabel(, labsize(large)) 
+> ///
+>                 || scatter `var'  `rhsvar' if inlist(cz,"12420","31080") [aw=pop_2000], ms
+> ize(medium)  mlstyle(none)  mcolor(dkgreen)  ///
+>                 || line smooth  `rhsvar' if inrange, ///
+>                         lcolor(black%50) legend(off)  ytitle(`var', size(large)) xtitle("M
+> edian Household Income, 2000 (th)", size(vlarge)) ytitle("`varlab'", size(vlarge)) ///
+>                 || scatter `var' `rhsvar'  if inlist(cz,"12420"), msymbol(i) mlab(cbsaname
+> ) mlabsize(vlarge) mlabposition(2) mlabcolor(dkgreen) mlabsize(medium) ///
+>                 || scatter `var' `rhsvar'  if inlist(cz,"31080"), msymbol(i) mlab(cbsaname
+> )  mlabgap(12pt) mlabsize(vlarge) mlabposition(1) mlabcolor(dkgreen) mlabsize(medium) 
+ 20. 
+.         graph export "exhibits/`var'_inc.pdf", replace name(sc1_`var')
+ 21.         
+. }
+(analytic weights assumed)
+(sum of wgt is 274,212,690.86996)
+
+Linear regression                               Number of obs     =        911
+                                                F(1, 909)         =       3.83
+                                                Prob > F          =     0.0505
+                                                R-squared         =     0.0291
+                                                Root MSE          =     .13391
+
+------------------------------------------------------------------------------
+             |               Robust
+  pop_growth | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0027792   .0014193     1.96   0.051    -6.24e-06    .0055646
+       _cons |   .0260733   .0620393     0.42   0.674    -.0956836    .1478302
+------------------------------------------------------------------------------
+(frequency weights assumed)
+file exhibits/pop_growth_inc.pdf saved as PDF format
+(analytic weights assumed)
+(sum of wgt is 274,212,690.86996)
+
+Linear regression                               Number of obs     =        911
+                                                F(1, 909)         =       6.30
+                                                Prob > F          =     0.0122
+                                                R-squared         =     0.0566
+                                                Root MSE          =     .07894
+
+------------------------------------------------------------------------------
+             |               Robust
+medinc_gro~h | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0023193    .000924     2.51   0.012      .000506    .0041327
+       _cons |   .3248986   .0356389     9.12   0.000     .2549545    .3948426
+------------------------------------------------------------------------------
+(frequency weights assumed)
+file exhibits/medinc_growth_inc.pdf saved as PDF format
+(analytic weights assumed)
+(sum of wgt is 274,212,690.86996)
+
+Linear regression                               Number of obs     =        911
+                                                F(1, 909)         =      15.93
+                                                Prob > F          =     0.0001
+                                                R-squared         =     0.1020
+                                                Root MSE          =      .2102
+
+------------------------------------------------------------------------------
+             |               Robust
+  hpi_growth | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |    .008494   .0021279     3.99   0.000     .0043178    .0126703
+       _cons |   .1627046   .0789373     2.06   0.040      .007784    .3176253
+------------------------------------------------------------------------------
+(frequency weights assumed)
+file exhibits/hpi_growth_inc.pdf saved as PDF format
+(analytic weights assumed)
+(sum of wgt is 274,212,690.86996)
+
+Linear regression                               Number of obs     =        911
+                                                F(1, 909)         =      22.08
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1007
+                                                Root MSE          =     .09138
+
+------------------------------------------------------------------------------
+             |               Robust
+ rent_growth | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0036669   .0007804     4.70   0.000     .0021354    .0051984
+       _cons |   .4407985   .0293515    15.02   0.000     .3831938    .4984031
+------------------------------------------------------------------------------
+(frequency weights assumed)
+file exhibits/rent_growth_inc.pdf saved as PDF format
+
+. 
+. // statistics for the discussion
+. format *_2000 *_2018 *_growth %20.0fc
+
+. format *_growth %5.4fc
+
+. list medinc_2000 medinc_growth pop_growth hpi_growth if cz=="12420"
+
+     +-------------------------------------------+
+     | med~2000   medinc~h   pop_gr~h   hpi_gr~h |
+     |-------------------------------------------|
+866. |       49     0.5007     0.5520     0.8058 |
+     +-------------------------------------------+
+
+. list medinc_2000 medinc_growth pop_growth hpi_growth if cz=="31080"
+
+     +-------------------------------------------+
+     | med~2000   medinc~h   pop_gr~h   hpi_gr~h |
+     |-------------------------------------------|
+826. |       46     0.5105     0.0720     0.9575 |
+     +-------------------------------------------+
+
+. // CPI over this time is about 50% (from FRED CPIAUCSL)
+. di exp(.426)
+1.5311208
+
+. di exp(.5007)
+1.6498758
+
+. di exp(.51)
+1.6652912
+
+. di exp(.552)
+1.736723
+
+. di exp(.072)
+1.0746553
+
+. di exp(0.8058)-0.5
+1.7384866
+
+. di exp(.958)-0.5
+2.1064783
+
+. 
+. // calculate how many cities have negative population growth and what their growth is
+. gen negative_pop_growth = pop_growth<0
+
+. sum negative_pop_growth [w=pop_2000 ]
+(analytic weights assumed)
+
+    Variable |     Obs      Weight        Mean   Std. dev.       Min        Max
+-------------+-----------------------------------------------------------------
+negative_p~h |     911   274212691    .1012485   .3018232          0          1
+
+. sum pop_growth if negative_pop_growth [w=pop_2000 ], det
+(analytic weights assumed)
+
+                Population Growth, 2000-2018
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%    -.2216152      -.4253063
+ 5%    -.1098776      -.3157123
+10%    -.0922384      -.2987721       Obs                 232
+25%    -.0643844      -.2681524       Sum of wgt.  27763618.5
+
+50%    -.0282466                      Mean          -.0430709
+                        Largest       Std. dev.      .0419429
+75%    -.0136288      -.0011686
+90%     -.010856       -.001061       Variance       .0017592
+95%    -.0055861      -.0009919       Skewness      -2.849478
+99%    -.0025252      -.0006094       Kurtosis       17.14245
+
+. 
+. // statistics for discussion of population growth
+. xtile inc_pctile=medinc_2000 [w=pop_2000], n(100)
+(analytic weights assumed)
+
+. sum pop_growth if inc_pctile>=80 [w=pop_2000]
+(analytic weights assumed)
+
+    Variable |     Obs      Weight        Mean   Std. dev.       Min        Max
+-------------+-----------------------------------------------------------------
+  pop_growth |      32    50337283    .1540157   .0919197   .0209317   .5368422
+
+. sum pop_growth if inrange(inc_pctile,20,40) [w=pop_2000]
+(analytic weights assumed)
+
+    Variable |     Obs      Weight        Mean   Std. dev.       Min        Max
+-------------+-----------------------------------------------------------------
+  pop_growth |     265  57258718.4    .1514114   .1356773  -.1310503   .6309629
+
+. sum pop_growth if inrange(inc_pctile,40,60) [w=pop_2000]
+(analytic weights assumed)
+
+    Variable |     Obs      Weight        Mean   Std. dev.       Min        Max
+-------------+-----------------------------------------------------------------
+  pop_growth |     122  62844260.5    .1828556   .1580461  -.0999475   .5485575
+
+. 
+. log close
+      name:  <unnamed>
+       log:  C:\Users\glhoward\Downloads\Replication\logbooks/figures_log.log
+  log type:  text
+ closed on:  21 May 2025, 11:04:54
+--------------------------------------------------------------------------------------------

@@ -1,0 +1,210 @@
+--------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\glhoward\Downloads\Replication\logbooks/elast_figures_log.log
+  log type:  text
+ opened on:  21 May 2025, 11:04:54
+
+. 
+. gen logpop = log(pop_2000)
+
+. 
+. gen logpopdensity = log(popdensity)
+
+. label var logpopdensity "Log 2000 Population per Sq Mi"
+
+. label var logpop "Log 2000 Population"
+
+. 
+. label var elast "Elasticity"
+
+. label var unaval "Unavailable Land Share"
+
+. label var WRLURI "Wharton Regulatory Index"
+
+. 
+. replace medinc_2000=medinc_2000/1000
+(270 real changes made)
+
+. 
+. local rhsvar medinc_2000
+
+. sort `rhsvar'
+
+. 
+. 
+. // put the areas without an elasticity at the 10th most inelastic in the distribution
+. qui sum elast, det
+
+. replace elast = `=r(p90)' if msanecma==9999
+(1 real change made)
+
+. qui sum unaval, det
+
+. replace unaval = `=r(p10)' if msanecma==9999
+(1 real change made)
+
+. qui sum WRLURI, det
+
+. replace WRLURI = `=r(p10)' if msanecma==9999
+(1 real change made)
+
+. 
+. cap graph drop _all
+
+. foreach var of varlist logpopdensity WRLURI {
+  2.         reg `var' `rhsvar' [w=pop_2000], r
+  3. *       pause
+.         local variance = e(V)[1,1]
+  4.         local sd = sqrt(`variance')
+  5.         local beta = strofreal(`=_b[`rhsvar']',"%5.4f")
+  6.         local t = strofreal(`=`beta'/`sd'',"%5.4f")
+  7.         local sd = strofreal(`sd',"%5.4f")
+  8.         
+.         local varlab : var label `var'
+  9.         
+.         qui sum `var' [w=pop_2000], det
+ 10.         local bottom = r(p5)
+ 11.         local top = r(p95)
+ 12.         
+.         qui sum `rhsvar' [w=pop_2000], det
+ 13.         local rhstop = r(p5)
+ 14.         local rhsbottom = r(p95)
+ 15.         
+.         cap drop smooth
+ 16.         lpoly `var'  `rhsvar' [w=round(pop_2000)] if msanecma!=9999, degree(1) bwidth(1
+> 0) gen(smooth) at(`rhsvar') nograph
+ 17.         
+.         cap drop inrange
+ 18.         gen inrange = inrange(`var',`bottom',`top') & inrange(`rhsvar',`rhstop',`rhsbot
+> tom') 
+ 19.         
+.                 
+.         scatter `var'  `rhsvar' if inrange & msanecma!=9999 [aw=pop_2000] , msize(tiny)  m
+> lstyle(none)  mcolor(blue%65) name(sc1_`var', replace) ///
+>                 || line smooth  `rhsvar' if inrange, xlabel(, labsize(large)) ylabel(, lab
+> size(large))  ///
+>                         lcolor(black%50) legend(off)   xtitle("Median Household Income, 20
+> 00 (th)", size(vlarge)) ytitle("`varlab'", size(vlarge))
+ 20.         local namelist "`namelist' sc1_`var'"
+ 21. *       graph export data/`var'_inc.png, replace name(sc1_`var')
+.         graph export "exhibits/`var'_inc.pdf", replace name(sc1_`var')
+ 22. }
+(analytic weights assumed)
+(sum of wgt is 281,654,859.44241)
+
+Linear regression                               Number of obs     =        270
+                                                F(1, 268)         =       8.93
+                                                Prob > F          =     0.0031
+                                                R-squared         =     0.1000
+                                                Root MSE          =     1.5512
+
+------------------------------------------------------------------------------
+             |               Robust
+logpopdens~y | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0796171    .026641     2.99   0.003     .0271648    .1320694
+       _cons |   1.958634   1.726759     1.13   0.258    -1.441104    5.358373
+------------------------------------------------------------------------------
+(frequency weights assumed)
+file exhibits/logpopdensity_inc.pdf saved as PDF format
+(analytic weights assumed)
+(sum of wgt is 281,654,859.44241)
+
+Linear regression                               Number of obs     =        270
+                                                F(1, 268)         =      12.61
+                                                Prob > F          =     0.0005
+                                                R-squared         =     0.1243
+                                                Root MSE          =     .74312
+
+------------------------------------------------------------------------------
+             |               Robust
+      WRLURI | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0431095   .0121388     3.55   0.000     .0192099    .0670091
+       _cons |  -2.082848   .7055593    -2.95   0.003    -3.471992   -.6937037
+------------------------------------------------------------------------------
+(frequency weights assumed)
+file exhibits/WRLURI_inc.pdf saved as PDF format
+
+. 
+. 
+. // fit line slopes
+. reg logpopdensity medinc_2000 [w=pop_2000]
+(analytic weights assumed)
+(sum of wgt is 281,654,859.44241)
+
+      Source |       SS           df       MS      Number of obs   =       270
+-------------+----------------------------------   F(1, 268)       =     29.79
+       Model |  71.6721795         1  71.6721795   Prob > F        =    0.0000
+    Residual |  644.878038       268  2.40626133   R-squared       =    0.1000
+-------------+----------------------------------   Adj R-squared   =    0.0967
+       Total |  716.550217       269  2.66375545   Root MSE        =    1.5512
+
+------------------------------------------------------------------------------
+logpopdens~y | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0796171   .0145882     5.46   0.000      .050895    .1083392
+       _cons |   1.958634   .6568563     2.98   0.003     .6653794    3.251889
+------------------------------------------------------------------------------
+
+. reg WRLURI medinc_2000 [w=pop_2000]
+(analytic weights assumed)
+(sum of wgt is 281,654,859.44241)
+
+      Source |       SS           df       MS      Number of obs   =       270
+-------------+----------------------------------   F(1, 268)       =     38.05
+       Model |  21.0128168         1  21.0128168   Prob > F        =    0.0000
+    Residual |   147.99572       268  .552222837   R-squared       =    0.1243
+-------------+----------------------------------   Adj R-squared   =    0.1211
+       Total |  169.008537       269  .628284524   Root MSE        =    .74312
+
+------------------------------------------------------------------------------
+      WRLURI | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0431095   .0069886     6.17   0.000       .02935     .056869
+       _cons |  -2.082848   .3146706    -6.62   0.000    -2.702389   -1.463307
+------------------------------------------------------------------------------
+
+. reg WRLURI medinc_2000 [w=pop_2000], beta
+(analytic weights assumed)
+(sum of wgt is 281,654,859.44241)
+
+      Source |       SS           df       MS      Number of obs   =       270
+-------------+----------------------------------   F(1, 268)       =     38.05
+       Model |  21.0128168         1  21.0128168   Prob > F        =    0.0000
+    Residual |   147.99572       268  .552222837   R-squared       =    0.1243
+-------------+----------------------------------   Adj R-squared   =    0.1211
+       Total |  169.008537       269  .628284524   Root MSE        =    .74312
+
+------------------------------------------------------------------------------
+      WRLURI | Coefficient  Std. err.      t    P>|t|                     Beta
+-------------+----------------------------------------------------------------
+ medinc_2000 |   .0431095   .0069886     6.17   0.000                 .3526045
+       _cons |  -2.082848   .3146706    -6.62   0.000                        .
+------------------------------------------------------------------------------
+
+. sum WRLURI[w=pop_2000], det
+(analytic weights assumed)
+
+                  Wharton Regulatory Index
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%    -1.239207      -1.764706
+ 5%    -1.008361      -1.676689
+10%    -1.008361      -1.604845       Obs                 270
+25%    -1.008361      -1.532346       Sum of wgt.   281654859
+
+50%    -.2189571                      Mean          -.1619297
+                        Largest       Std. dev.       .792644
+75%     .4854298        1.89206
+90%     .8363913       2.229298       Variance       .6282845
+95%     1.126679       3.121081       Skewness       .6007193
+99%     1.702507       4.312253       Kurtosis       3.112459
+
+. 
+. log close
+      name:  <unnamed>
+       log:  C:\Users\glhoward\Downloads\Replication\logbooks/elast_figures_log.log
+  log type:  text
+ closed on:  21 May 2025, 11:04:56
+--------------------------------------------------------------------------------------------
